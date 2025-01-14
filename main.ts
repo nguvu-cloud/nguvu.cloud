@@ -18,7 +18,7 @@ Deno.serve({ port: args.port || 8000 },async (req: Request) => {
         return serveFile(req, `.${pathname}`) 
     }
 
-    console.log(Deno.env.get("APP_SOURCEDIR"))
+    // console.log(Deno.env.get("APP_SOURCEDIR"))
 
     const main_html = await Deno.readFile(`${Deno.env.get("APP_SOURCEDIR") || Deno.cwd()}/pages/index.html`)
     return new Response(decoder.decode(main_html), {
